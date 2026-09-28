@@ -6,7 +6,7 @@
 - **Pondok Pesantren Ath-Thoifah Al Manshuroh** — так на воротах и всех вывесках (`photo_5`, `photo_6`, `photo_7`).
   В Google Maps написано иначе: «Ath-Thaifah Al-Manshurah». На сайте используем написание с вывесок; вариант из Maps — в `<meta description>` для поиска.
 - По-арабски: **معهد الطائفة المنصورة** (ворота, `photo_5`).
-- Логотип: круглая печать с раскрытой книгой, надпись по кругу на арабском и латинице (на воротах и вывесках). **Нужен файл логотипа в хорошем качестве.**
+- Логотип: круглая печать с раскрытой книгой, надпись по кругу на арабском и латинице (на воротах и вывесках). Фото слишком размыто для прямого использования — по нему перерисован чистый SVG-вариант: `assets/img/logo.svg` (полный, с кольцевой надписью), `assets/img/logo-mark.svg` / `favicon.svg` (упрощённый, для мелких размеров). **Как только школа найдёт оригинальный файл логотипа — заменить эти SVG на него.**
 
 ## Адрес
 - **Jl. Benteng Link. 1, Kel. Paluh Kemiri, Kec. Lubuk Pakam, Kab. Deli Serdang, Sumatera Utara** (ворота, `photo_5`).
@@ -23,7 +23,19 @@
 ## PKBM Al Manshuroh — центр обучения для взрослых (вывеска, `photo_6`)
 - «Life Skill». Программы: Kesetaraan Paket A (SD), Paket B (SMP), Paket C (SMA).
 - Аккредитация: **B**.
-- Email секретариата на вывеске: pkbmalmanshuroh4@gmail.com — **уточнить у школы, публиковать ли его**.
+- Email секретариата (с вывески): pkbmalmanshuroh4@gmail.com — **публикация разрешена владельцем сайта** (подтверждено в чате 28.09.2026), опубликован в контактах.
+
+## Контакты (подтверждено владельцем сайта, 28.09.2026)
+- WhatsApp: **+62 852-7259-8756** — опубликован в контактах, кнопке WhatsApp и в блоке Daurah.
+
+## Дауроh Imam Asy-Syafi'i ke-14 (постер `daurah.jpg`, предоставлен владельцем)
+- Организатор: Ma'had Ath-Thoifah Al-Mansurah (написание на постере отличается от вывески на воротах — везде на сайте используем написание с ворот, «Ath-Thoifah Al Manshuroh»).
+- Тема: **Kajian Islam Ilmiah**, «Manhaj Salaf di Zaman Fitnah dan Berubahnya Standar Kebenaran» (منهج السلف في زمن الفتن وتغيّر الموازين).
+- Musyrif/pembina dauroh: **Syeikh Ruzeiq bin Hamid Al Qurosy**, hafizhahullah.
+- Penceramah: **Syeikh Adil Manshur Al Basya**, hafizhahullah.
+- Место: Lubuk Pakam, Deli Serdang.
+- **Дата и расписание («Jadwal Acara») на присланном фото обрезаны — не видны.** На сайте стоит `[PLACEHOLDER]`, нужно уточнить у оргкомитета.
+- Файл постера: `assets/img/daurah-poster.jpg` (это реальная афиша мероприятия, не сгенерирована ИИ — можно свободно использовать).
 
 ## Kampus Daarul Qur'an wa Sunnah — كلية دار القرآن و السنة (табличка, `photo_9`)
 - Аудитория дистанционных лекций (онлайн, Zoom).

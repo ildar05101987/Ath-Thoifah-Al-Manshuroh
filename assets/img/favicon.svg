@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Lambang pesantren">
+  <!-- simplified mark for small sizes (header, favicon) — no ring text, it blurs below ~80px -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#d4af5a" stroke-width="4"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#d4af5a" stroke-width="2"/>
+  <g fill="none" stroke="#d4af5a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 55 C 72 65, 55 90, 55 124 L100 110 L145 124 C145 90, 128 65, 100 55 Z"/>
+    <path d="M100 55 L100 110"/>
+  </g>
+</svg>
