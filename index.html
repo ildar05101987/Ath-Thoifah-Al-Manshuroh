@@ -273,7 +273,7 @@
 <header id="top">
   <div class="announce" id="announceBar">
     <div class="wrap announce-in">
-      <p><strong>Dauroh Imam Asy-Syafi'i ke-14</strong> — bersama Syeikh Adil Manshur Al Basya <em>hafizhahullah</em>, insyaAllah segera hadir. <a href="#daurah">Info lengkap →</a></p>
+      <p data-i18n="announce"><strong>Dauroh Imam Asy-Syafi'i ke-14</strong> — bersama Syeikh Adil Manshur Al Basya <em>hafizhahullah</em>, insyaAllah segera hadir. <a href="#daurah">Info lengkap →</a></p>
       <button class="announce-close" id="announceClose" aria-label="Tutup pengumuman">✕</button>
     </div>
   </div>
@@ -292,18 +292,18 @@
       <div class="logo-text"><strong>Ath-Thoifah Al Manshuroh</strong><span>PONDOK PESANTREN · LUBUK PAKAM</span></div>
     </a>
     <ul class="menu" id="menu">
-      <li><a href="#profil">Profil</a></li>
-      <li><a href="#program">Program</a></li>
-      <li><a href="#kegiatan">Kegiatan</a></li>
-      <li><a href="#daurah">Daurah</a></li>
-      <li><a href="#berita">Berita</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-      <li class="m-langs langs"><a href="/id/" class="on">ID</a><a href="/en/">EN</a><a href="/ru/">RU</a><a href="/ar/" class="ar">عربي</a></li>
+      <li><a href="#profil" data-i18n="nav_profil">Profil</a></li>
+      <li><a href="#program" data-i18n="nav_program">Program</a></li>
+      <li><a href="#kegiatan" data-i18n="nav_kegiatan">Kegiatan</a></li>
+      <li><a href="#daurah" data-i18n="nav_daurah">Daurah</a></li>
+      <li><a href="#berita" data-i18n="nav_berita">Berita</a></li>
+      <li><a href="#kontak" data-i18n="nav_kontak">Kontak</a></li>
+      <li class="m-langs langs" data-langswitch><a href="#" data-lang="id" class="on">ID</a><a href="#" data-lang="en">EN</a><a href="#" data-lang="ru">RU</a><a href="#" data-lang="ar" class="ar">عربي</a></li>
     </ul>
-    <div class="langs" aria-label="Bahasa">
-      <a href="/id/" class="on" hreflang="id">ID</a><a href="/en/" hreflang="en">EN</a><a href="/ru/" hreflang="ru">RU</a><a href="/ar/" hreflang="ar" class="ar">عربي</a>
+    <div class="langs" aria-label="Bahasa" data-langswitch>
+      <a href="#" data-lang="id" class="on">ID</a><a href="#" data-lang="en">EN</a><a href="#" data-lang="ru">RU</a><a href="#" data-lang="ar" class="ar">عربي</a>
     </div>
-    <a href="#ppdb" class="btn btn-gold">Daftar Sekarang</a>
+    <a href="#ppdb" class="btn btn-gold" data-i18n="nav_cta">Daftar Sekarang</a>
     <button class="burger" id="burger" aria-label="Menu">☰</button>
   </nav>
 </header>
@@ -313,37 +313,37 @@
   <div class="wrap hero-grid">
     <div class="reveal">
       <p class="bismillah ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-      <span class="eyebrow">Pondok Pesantren · Deli Serdang</span>
-      <h1>Membentuk generasi <em>Qur'ani</em> yang berilmu dan beradab</h1>
-      <p class="lead">Pendidikan Al-Qur'an, ilmu syar'i, dan bahasa Arab di lingkungan yang tenang, disiplin, dan penuh kasih sayang di Lubuk Pakam.</p>
+      <span class="eyebrow" data-i18n="hero_eyebrow">Pondok Pesantren · Deli Serdang</span>
+      <h1 data-i18n="hero_title">Membentuk generasi <em>Qur'ani</em> yang berilmu dan beradab</h1>
+      <p class="lead" data-i18n="hero_lead">Pendidikan Al-Qur'an, ilmu syar'i, dan bahasa Arab di lingkungan yang tenang, disiplin, dan penuh kasih sayang di Lubuk Pakam.</p>
       <div class="hero-actions">
-        <a href="#ppdb" class="btn btn-gold">Pendaftaran Santri Baru →</a>
-        <a href="#profil" class="btn btn-ghost">Kenali Kami</a>
+        <a href="#ppdb" class="btn btn-gold" data-i18n="hero_cta1">Pendaftaran Santri Baru →</a>
+        <a href="#profil" class="btn btn-ghost" data-i18n="hero_cta2">Kenali Kami</a>
       </div>
     </div>
 
     <aside class="prayer reveal" aria-label="Jadwal sholat">
       <div class="arch"></div>
-      <div class="prayer-head"><h3>Jadwal Sholat</h3><span class="ar" style="color:var(--gold)">مواقيت الصلاة</span></div>
+      <div class="prayer-head"><h3 data-i18n="prayer_title">Jadwal Sholat</h3><span class="ar" style="color:var(--gold)">مواقيت الصلاة</span></div>
       <p class="prayer-date" id="pdate">Lubuk Pakam</p>
       <ul id="plist">
-        <li data-k="Fajr"><span>Subuh</span><span>04:58</span></li>
-        <li data-k="Dhuhr"><span>Dzuhur</span><span>12:17</span></li>
-        <li data-k="Asr"><span>Ashar</span><span>15:26</span></li>
-        <li data-k="Maghrib"><span>Maghrib</span><span>18:20</span></li>
-        <li data-k="Isha"><span>Isya</span><span>19:30</span></li>
+        <li data-k="Fajr"><span data-i18n="prayer_fajr">Subuh</span><span>04:58</span></li>
+        <li data-k="Dhuhr"><span data-i18n="prayer_dhuhr">Dzuhur</span><span>12:17</span></li>
+        <li data-k="Asr"><span data-i18n="prayer_asr">Ashar</span><span>15:26</span></li>
+        <li data-k="Maghrib"><span data-i18n="prayer_maghrib">Maghrib</span><span>18:20</span></li>
+        <li data-k="Isha"><span data-i18n="prayer_isha">Isya</span><span>19:30</span></li>
       </ul>
-      <small id="psrc">Perkiraan waktu · diperbarui otomatis</small>
+      <small id="psrc" data-i18n="prayer_src">Perkiraan waktu · diperbarui otomatis</small>
     </aside>
   </div>
 </section>
 
 <section class="stats">
   <div class="wrap stats-grid reveal">
-    <div class="stat"><b>[000]+</b><span>Santri aktif</span></div>
-    <div class="stat"><b>[00]</b><span>Ustadz &amp; Ustadzah</span></div>
-    <div class="stat"><b>[00]</b><span>Tahun berdiri</span></div>
-    <div class="stat"><b>[00]</b><span>Alumni hafidz</span></div>
+    <div class="stat"><b>[000]+</b><span data-i18n="stat1">Santri aktif</span></div>
+    <div class="stat"><b>[00]</b><span data-i18n="stat2">Ustadz &amp; Ustadzah</span></div>
+    <div class="stat"><b>[00]</b><span data-i18n="stat3">Tahun berdiri</span></div>
+    <div class="stat"><b>[00]</b><span data-i18n="stat4">Alumni hafidz</span></div>
   </div>
 </section>
 
@@ -351,12 +351,12 @@
   <div class="wrap about-grid">
     <div class="photo reveal"><img src="assets/img/photos/gerbang.jpg" alt="Gerbang Pondok Pesantren Ath-Thoifah Al Manshuroh di Paluh Kemiri, Lubuk Pakam" loading="lazy"></div>
     <div class="reveal">
-      <span class="eyebrow">Tentang Kami</span>
-      <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 16px">Menuntut ilmu di atas manhaj yang lurus</h2>
-      <p style="color:var(--muted)">[PLACEHOLDER] Pondok Pesantren Ath-Thoifah Al Manshuroh didirikan pada tahun [....] di Lubuk Pakam, Kabupaten Deli Serdang. Kami membimbing santri untuk menghafal Al-Qur'an, memahami agama dengan benar, dan berakhlak mulia.</p>
+      <span class="eyebrow" data-i18n="profil_eyebrow">Tentang Kami</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 16px" data-i18n="profil_title">Menuntut ilmu di atas manhaj yang lurus</h2>
+      <p style="color:var(--muted)" data-i18n="profil_text">[PLACEHOLDER] Pondok Pesantren Ath-Thoifah Al Manshuroh didirikan pada tahun [....] di Lubuk Pakam, Kabupaten Deli Serdang. Kami membimbing santri untuk menghafal Al-Qur'an, memahami agama dengan benar, dan berakhlak mulia.</p>
       <div class="vm">
-        <div class="vm-item"><h3>Visi</h3><p>[PLACEHOLDER] Menjadi pesantren yang melahirkan generasi berilmu, beramal, dan berakhlak Qur'ani.</p></div>
-        <div class="vm-item"><h3>Misi</h3><p>[PLACEHOLDER] Pembinaan tahfidz, pengajaran ilmu syar'i, bahasa Arab, serta pembiasaan adab sehari-hari.</p></div>
+        <div class="vm-item"><h3 data-i18n="profil_visi_t">Visi</h3><p data-i18n="profil_visi_p">[PLACEHOLDER] Menjadi pesantren yang melahirkan generasi berilmu, beramal, dan berakhlak Qur'ani.</p></div>
+        <div class="vm-item"><h3 data-i18n="profil_misi_t">Misi</h3><p data-i18n="profil_misi_p">[PLACEHOLDER] Pembinaan tahfidz, pengajaran ilmu syar'i, bahasa Arab, serta pembiasaan adab sehari-hari.</p></div>
       </div>
     </div>
   </div>
@@ -365,15 +365,15 @@
 <section id="program" class="programs">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Program Pendidikan</span>
-      <h2>Kurikulum yang seimbang</h2>
-      <p>Perpaduan hafalan Al-Qur'an, ilmu agama, dan pendidikan umum.</p>
+      <span class="eyebrow" data-i18n="program_eyebrow">Program Pendidikan</span>
+      <h2 data-i18n="program_title">Kurikulum yang seimbang</h2>
+      <p data-i18n="program_lead">Perpaduan hafalan Al-Qur'an, ilmu agama, dan pendidikan umum.</p>
     </div>
     <div class="cards">
-      <article class="card reveal"><span class="ar">تحفيظ</span><h3>Tahfidz Al-Qur'an</h3><p>Hafalan dengan metode talaqqi dan muraja'ah harian, target mutqin.</p></article>
-      <article class="card reveal"><span class="ar">علوم</span><h3>Diniyah</h3><p>Aqidah, fiqih, hadits, tafsir, dan sirah nabawiyah secara bertahap.</p></article>
-      <article class="card reveal"><span class="ar">لغة</span><h3>Bahasa Arab</h3><p>Nahwu, sharaf, dan praktik percakapan sebagai kunci memahami kitab.</p></article>
-      <article class="card reveal"><span class="ar">أدب</span><h3>Adab &amp; Karakter</h3><p>Pembinaan akhlak, kemandirian, dan kedisiplinan dalam kehidupan asrama.</p></article>
+      <article class="card reveal"><span class="ar">تحفيظ</span><h3 data-i18n="card1_t">Tahfidz Al-Qur'an</h3><p data-i18n="card1_p">Hafalan dengan metode talaqqi dan muraja'ah harian, target mutqin.</p></article>
+      <article class="card reveal"><span class="ar">علوم</span><h3 data-i18n="card2_t">Diniyah</h3><p data-i18n="card2_p">Aqidah, fiqih, hadits, tafsir, dan sirah nabawiyah secara bertahap.</p></article>
+      <article class="card reveal"><span class="ar">لغة</span><h3 data-i18n="card3_t">Bahasa Arab</h3><p data-i18n="card3_p">Nahwu, sharaf, dan praktik percakapan sebagai kunci memahami kitab.</p></article>
+      <article class="card reveal"><span class="ar">أدب</span><h3 data-i18n="card4_t">Adab &amp; Karakter</h3><p data-i18n="card4_p">Pembinaan akhlak, kemandirian, dan kedisiplinan dalam kehidupan asrama.</p></article>
     </div>
   </div>
 </section>
@@ -381,17 +381,17 @@
 <section id="kegiatan">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Keseharian Santri</span>
-      <h2>Satu hari di pesantren</h2>
-      <p>[PLACEHOLDER] Contoh jadwal harian — sesuaikan dengan jadwal asli.</p>
+      <span class="eyebrow" data-i18n="keg_eyebrow">Keseharian Santri</span>
+      <h2 data-i18n="keg_title">Satu hari di pesantren</h2>
+      <p data-i18n="keg_lead">[PLACEHOLDER] Contoh jadwal harian — sesuaikan dengan jadwal asli.</p>
     </div>
     <div class="timeline reveal">
-      <div class="slot"><time>04:00</time><h3>Qiyamul Lail</h3><p>Sholat malam &amp; Subuh berjamaah</p></div>
-      <div class="slot"><time>05:30</time><h3>Halaqah Tahfidz</h3><p>Setoran hafalan baru</p></div>
-      <div class="slot"><time>08:00</time><h3>Kelas Pagi</h3><p>Diniyah &amp; pelajaran umum</p></div>
-      <div class="slot"><time>13:30</time><h3>Bahasa Arab</h3><p>Nahwu, sharaf, muhadatsah</p></div>
-      <div class="slot"><time>16:30</time><h3>Olahraga</h3><p>Kegiatan &amp; ekstrakurikuler</p></div>
-      <div class="slot"><time>19:45</time><h3>Muraja'ah</h3><p>Mengulang hafalan &amp; belajar</p></div>
+      <div class="slot"><time>04:00</time><h3 data-i18n="slot1_t">Qiyamul Lail</h3><p data-i18n="slot1_p">Sholat malam &amp; Subuh berjamaah</p></div>
+      <div class="slot"><time>05:30</time><h3 data-i18n="slot2_t">Halaqah Tahfidz</h3><p data-i18n="slot2_p">Setoran hafalan baru</p></div>
+      <div class="slot"><time>08:00</time><h3 data-i18n="slot3_t">Kelas Pagi</h3><p data-i18n="slot3_p">Diniyah &amp; pelajaran umum</p></div>
+      <div class="slot"><time>13:30</time><h3 data-i18n="slot4_t">Bahasa Arab</h3><p data-i18n="slot4_p">Nahwu, sharaf, muhadatsah</p></div>
+      <div class="slot"><time>16:30</time><h3 data-i18n="slot5_t">Olahraga</h3><p data-i18n="slot5_p">Kegiatan &amp; ekstrakurikuler</p></div>
+      <div class="slot"><time>19:45</time><h3 data-i18n="slot6_t">Muraja'ah</h3><p data-i18n="slot6_p">Mengulang hafalan &amp; belajar</p></div>
     </div>
   </div>
 </section>
@@ -399,9 +399,9 @@
 <section id="galeri" style="padding-top:0">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Galeri</span>
-      <h2>Suasana pesantren</h2>
-      <p>Kampus kami di tengah sawah Paluh Kemiri, Lubuk Pakam.</p>
+      <span class="eyebrow" data-i18n="gal_eyebrow">Galeri</span>
+      <h2 data-i18n="gal_title">Suasana pesantren</h2>
+      <p data-i18n="gal_lead">Kampus kami di tengah sawah Paluh Kemiri, Lubuk Pakam.</p>
     </div>
     <div class="gallery reveal">
       <button class="g-item g-wide" data-full="assets/img/photos/kampus-sawah.jpg"><img src="assets/img/photos/kampus-sawah.jpg" alt="Kampus pesantren dilihat dari sawah" loading="lazy"></button>
@@ -423,17 +423,17 @@
     <div class="daurah-card reveal">
       <div>
         <svg class="daurah-branch" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21V9M12 9c0-3 2-5 5-5-1 3-2 5-5 5Zm0 0C12 6 10 4 7 4c1 3 2 5 5 5Zm-3 5c1 1 3 1 3 1m3-1c-1 1-3 1-3 1"/></svg>
-        <span class="eyebrow">Kabar Terbaru</span>
+        <span class="eyebrow" data-i18n="daurah_eyebrow">Kabar Terbaru</span>
         <h2>Dauroh Imam Asy-Syafi'i ke-14</h2>
-        <p>Kajian Islam Ilmiah dalam rangkaian Dauroh Imam Asy-Syafi'i ke-14, bertema <em>"Manhaj Salaf di Zaman Fitnah dan Berubahnya Standar Kebenaran"</em> (منهج السلف في زمن الفتن وتغيّر الموازين).</p>
+        <p data-i18n="daurah_text">Kajian Islam Ilmiah dalam rangkaian Dauroh Imam Asy-Syafi'i ke-14, bertema <em>"Manhaj Salaf di Zaman Fitnah dan Berubahnya Standar Kebenaran"</em> (منهج السلف في زمن الفتن وتغيّر الموازين).</p>
         <ul class="daurah-facts">
-          <li>📖 <span>Musyrif / Pembina Dauroh: Syeikh Ruzeiq bin Hamid Al Qurosy <em>hafizhahullah</em></span></li>
-          <li>🎙️ <span>Penceramah: Syeikh Adil Manshur Al Basya <em>hafizhahullah</em></span></li>
-          <li>📍 <span>Tempat: Lubuk Pakam, Deli Serdang</span></li>
-          <li>📅 <span>Tanggal &amp; jadwal acara: [PLACEHOLDER — belum terbaca dari poster]</span></li>
+          <li>📖 <span data-i18n="daurah_f1">Musyrif / Pembina Dauroh: Syeikh Ruzeiq bin Hamid Al Qurosy <em>hafizhahullah</em></span></li>
+          <li>🎙️ <span data-i18n="daurah_f2">Penceramah: Syeikh Adil Manshur Al Basya <em>hafizhahullah</em></span></li>
+          <li>📍 <span data-i18n="daurah_f3">Tempat: Lubuk Pakam, Deli Serdang</span></li>
+          <li>📅 <span data-i18n="daurah_f4">Tanggal &amp; jadwal acara: [PLACEHOLDER — belum terbaca dari poster]</span></li>
         </ul>
         <div class="hero-actions" style="margin-top:26px">
-          <a href="https://wa.me/6285272598756?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20jadwal%20daurah" class="btn btn-gold">Tanya Jadwal via WhatsApp</a>
+          <a href="https://wa.me/6285272598756?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20jadwal%20daurah" class="btn btn-gold" data-i18n="daurah_cta">Tanya Jadwal via WhatsApp</a>
         </div>
       </div>
       <img class="daurah-poster" src="assets/img/daurah-poster.jpg" alt="Poster Dauroh Imam Asy-Syafi'i ke-14, Ma'had Ath-Thoifah Al-Mansurah">
@@ -445,19 +445,19 @@
   <div class="wrap">
     <div class="ppdb-box reveal">
       <div>
-        <span class="eyebrow">PPDB [2027/2028]</span>
-        <h2>Pendaftaran santri baru telah dibuka</h2>
-        <p>Kuota terbatas. Hubungi panitia melalui WhatsApp atau isi formulir online.</p>
+        <span class="eyebrow" data-i18n="ppdb_eyebrow">PPDB [2027/2028]</span>
+        <h2 data-i18n="ppdb_title">Pendaftaran santri baru telah dibuka</h2>
+        <p data-i18n="ppdb_lead">Kuota terbatas. Hubungi panitia melalui WhatsApp atau isi formulir online.</p>
         <div class="hero-actions" style="margin-top:28px">
-          <a href="#" class="btn btn-gold">Isi Formulir</a>
-          <a href="https://wa.me/6285272598756" class="btn btn-ghost">Tanya via WhatsApp</a>
+          <a href="#" class="btn btn-gold" data-i18n="ppdb_cta1">Isi Formulir</a>
+          <a href="https://wa.me/6285272598756" class="btn btn-ghost" data-i18n="ppdb_cta2">Tanya via WhatsApp</a>
         </div>
       </div>
       <ol class="steps">
-        <li>Isi formulir pendaftaran</li>
-        <li>Lengkapi berkas (KK, akta, foto)</li>
-        <li>Tes baca Al-Qur'an &amp; wawancara</li>
-        <li>Pengumuman &amp; daftar ulang</li>
+        <li data-i18n="step1">Isi formulir pendaftaran</li>
+        <li data-i18n="step2">Lengkapi berkas (KK, akta, foto)</li>
+        <li data-i18n="step3">Tes baca Al-Qur'an &amp; wawancara</li>
+        <li data-i18n="step4">Pengumuman &amp; daftar ulang</li>
       </ol>
     </div>
   </div>
@@ -466,13 +466,13 @@
 <section id="berita" style="padding-top:0">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Kabar Pesantren</span>
-      <h2>Berita &amp; kegiatan terbaru</h2>
+      <span class="eyebrow" data-i18n="berita_eyebrow">Kabar Pesantren</span>
+      <h2 data-i18n="berita_title">Berita &amp; kegiatan terbaru</h2>
     </div>
     <div class="news-grid">
-      <article class="news reveal"><div class="news-img"><img src="assets/img/photos/masjid.jpg" alt="Masjid pesantren" loading="lazy"></div><div class="news-body"><time>12 SEP 2026</time><h3>Wisuda tahfidz angkatan [..]</h3><p>[PLACEHOLDER] Alhamdulillah, santri menyelesaikan hafalan...</p></div></article>
-      <article class="news reveal"><div class="news-img"><img src="assets/img/photos/aula.jpg" alt="Aula pesantren" loading="lazy"></div><div class="news-body"><time>28 AGU 2026</time><h3>Kajian umum bersama wali santri</h3><p>[PLACEHOLDER] Kegiatan rutin bulanan untuk orang tua...</p></div></article>
-      <article class="news reveal"><div class="news-img"><img src="assets/img/photos/serambi.jpg" alt="Serambi asrama" loading="lazy"></div><div class="news-body"><time>10 AGU 2026</time><h3>Pembukaan tahun ajaran baru</h3><p>[PLACEHOLDER] Menyambut santri baru di asrama...</p></div></article>
+      <article class="news reveal"><div class="news-img"><img src="assets/img/photos/masjid.jpg" alt="Masjid pesantren" loading="lazy"></div><div class="news-body"><time>12 SEP 2026</time><h3 data-i18n="news1_t">Wisuda tahfidz angkatan [..]</h3><p data-i18n="news1_p">[PLACEHOLDER] Alhamdulillah, santri menyelesaikan hafalan...</p></div></article>
+      <article class="news reveal"><div class="news-img"><img src="assets/img/photos/aula.jpg" alt="Aula pesantren" loading="lazy"></div><div class="news-body"><time>28 AGU 2026</time><h3 data-i18n="news2_t">Kajian umum bersama wali santri</h3><p data-i18n="news2_p">[PLACEHOLDER] Kegiatan rutin bulanan untuk orang tua...</p></div></article>
+      <article class="news reveal"><div class="news-img"><img src="assets/img/photos/serambi.jpg" alt="Serambi asrama" loading="lazy"></div><div class="news-body"><time>10 AGU 2026</time><h3 data-i18n="news3_t">Pembukaan tahun ajaran baru</h3><p data-i18n="news3_p">[PLACEHOLDER] Menyambut santri baru di asrama...</p></div></article>
     </div>
   </div>
 </section>
@@ -480,16 +480,16 @@
 <section id="peta" style="padding-bottom:0">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Dari Mana Saja</span>
-      <h2>Temukan kami di peta dunia</h2>
-      <p>Putar bumi, perbesar dengan roda mouse atau dua jari — atau terbang langsung ke pesantren.</p>
+      <span class="eyebrow" data-i18n="peta_eyebrow">Dari Mana Saja</span>
+      <h2 data-i18n="peta_title">Temukan kami di peta dunia</h2>
+      <p data-i18n="peta_lead">Putar bumi, perbesar dengan roda mouse atau dua jari — atau terbang langsung ke pesantren.</p>
     </div>
     <div class="globe-stage">
       <div id="globeViz" role="img" aria-label="Bola dunia interaktif dengan penanda Pondok Pesantren Ath-Thoifah Al Manshuroh di Lubuk Pakam, Indonesia"></div>
-      <div class="globe-loading" id="globeLoading">Memuat bola dunia…</div>
+      <div class="globe-loading" id="globeLoading" data-i18n="peta_loading">Memuat bola dunia…</div>
       <div class="globe-controls">
-        <button class="btn btn-gold" id="globeFly">Terbang ke pesantren ✈</button>
-        <button class="btn btn-ghost" id="globeReset">Lihat seluruh bumi</button>
+        <button class="btn btn-gold" id="globeFly" data-i18n="peta_fly">Terbang ke pesantren ✈</button>
+        <button class="btn btn-ghost" id="globeReset" data-i18n="peta_reset">Lihat seluruh bumi</button>
       </div>
       <div class="globe-card" id="globeCard">
         <button class="globe-card-close" id="globeCardClose" aria-label="Tutup">✕</button>
@@ -497,7 +497,7 @@
         <div class="globe-card-body">
           <strong>Ath-Thoifah Al Manshuroh</strong>
           <p>Jl. Benteng Link. 1, Kel. Paluh Kemiri, Kec. Lubuk Pakam, Kab. Deli Serdang, Sumatera Utara</p>
-          <a href="https://maps.app.goo.gl/exViczW73zwKNhY7A" target="_blank" rel="noopener">Rute di Google Maps ↗</a>
+          <a href="https://maps.app.goo.gl/exViczW73zwKNhY7A" target="_blank" rel="noopener" data-i18n="peta_route">Rute di Google Maps ↗</a>
         </div>
       </div>
       <div class="globe-credit" id="globeCredit">Bumi: NASA Blue Marble</div>
@@ -508,15 +508,15 @@
 <section id="kontak" style="padding-top:0">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Kunjungi Kami</span>
-      <h2>Lokasi &amp; kontak</h2>
+      <span class="eyebrow" data-i18n="kontak_eyebrow">Kunjungi Kami</span>
+      <h2 data-i18n="kontak_title">Lokasi &amp; kontak</h2>
     </div>
     <div class="contact-grid">
       <div class="contact-list reveal">
-        <div class="contact-item"><span>Alamat</span><p>Jl. Benteng Link. 1, Kel. Paluh Kemiri, Kec. Lubuk Pakam, Kab. Deli Serdang, Sumatera Utara</p></div>
+        <div class="contact-item"><span data-i18n="c_alamat">Alamat</span><p>Jl. Benteng Link. 1, Kel. Paluh Kemiri, Kec. Lubuk Pakam, Kab. Deli Serdang, Sumatera Utara</p></div>
         <div class="contact-item"><span>WhatsApp</span><p><a href="https://wa.me/6285272598756">+62 852-7259-8756</a></p></div>
-        <div class="contact-item"><span>Email</span><p><a href="mailto:pkbmalmanshuroh4@gmail.com">pkbmalmanshuroh4@gmail.com</a></p></div>
-        <a class="btn btn-ghost" href="https://maps.app.goo.gl/exViczW73zwKNhY7A" target="_blank" rel="noopener">Buka di Google Maps ↗</a>
+        <div class="contact-item"><span data-i18n="c_email">Email</span><p><a href="mailto:pkbmalmanshuroh4@gmail.com">pkbmalmanshuroh4@gmail.com</a></p></div>
+        <a class="btn btn-ghost" href="https://maps.app.goo.gl/exViczW73zwKNhY7A" target="_blank" rel="noopener" data-i18n="c_maps">Buka di Google Maps ↗</a>
       </div>
       <div class="map reveal">
         <iframe loading="lazy" title="Peta lokasi" src="https://www.google.com/maps?q=Pondok+Pesantren+Ath-Thaifah+Al-Manshurah+Deli+Serdang&output=embed"></iframe>
@@ -536,7 +536,7 @@
           <path d="M100 55 L100 110"/>
         </g>
       </svg>
-      <div><strong style="color:var(--text);font-family:var(--font-head)">Ath-Thoifah Al Manshuroh</strong><br>© <span id="yr">2026</span> Pondok Pesantren · Lubuk Pakam</div>
+      <div><strong style="color:var(--text);font-family:var(--font-head)">Ath-Thoifah Al Manshuroh</strong><br>© <span id="yr">2026</span> <span data-i18n="foot_sub">Pondok Pesantren · Lubuk Pakam</span></div>
     </div>
     <p class="ar">وَقُلْ رَبِّ زِدْنِي عِلْمًا</p>
   </div>
@@ -704,6 +704,138 @@
       if (entries.some(e => e.isIntersecting)) { obs.disconnect(); start(); }
     }, { rootMargin: '400px' }).observe(stage);
   })();
+
+  // Переключение языка. Полностью работают ID и RU; EN/AR — планируются отдельными
+  // страницами /en/ /ar/ (см. PLAN.md), поэтому пока не переключаются с предупреждением.
+  const i18n = {
+    announce: { id: `<strong>Dauroh Imam Asy-Syafi'i ke-14</strong> — bersama Syeikh Adil Manshur Al Basya <em>hafizhahullah</em>, insyaAllah segera hadir. <a href="#daurah">Info lengkap →</a>`,
+                ru: `<strong>Даурох имама Аш-Шафии, 14-й</strong> — с шейхом Адилем Мансуром Аль-Басья, хафизахуллах, скоро состоится. <a href="#daurah">Подробнее →</a>` },
+    nav_profil: { id: 'Profil', ru: 'О школе' },
+    nav_program: { id: 'Program', ru: 'Программы' },
+    nav_kegiatan: { id: 'Kegiatan', ru: 'Распорядок' },
+    nav_daurah: { id: 'Daurah', ru: 'Даурох' },
+    nav_berita: { id: 'Berita', ru: 'Новости' },
+    nav_kontak: { id: 'Kontak', ru: 'Контакты' },
+    nav_cta: { id: 'Daftar Sekarang', ru: 'Записаться' },
+    hero_eyebrow: { id: 'Pondok Pesantren · Deli Serdang', ru: 'Пондок Песантрен · Дели Серданг' },
+    hero_title: { id: `Membentuk generasi <em>Qur'ani</em> yang berilmu dan beradab`, ru: `Растим поколение <em>Корана</em> — знающее и воспитанное` },
+    hero_lead: { id: `Pendidikan Al-Qur'an, ilmu syar'i, dan bahasa Arab di lingkungan yang tenang, disiplin, dan penuh kasih sayang di Lubuk Pakam.`, ru: 'Изучение Корана, исламских наук и арабского языка в спокойной, дисциплинированной и заботливой обстановке в Лубук-Пакаме.' },
+    hero_cta1: { id: 'Pendaftaran Santri Baru →', ru: 'Поступление в школу →' },
+    hero_cta2: { id: 'Kenali Kami', ru: 'Узнать больше' },
+    prayer_title: { id: 'Jadwal Sholat', ru: 'Время намаза' },
+    prayer_fajr: { id: 'Subuh', ru: 'Фаджр' },
+    prayer_dhuhr: { id: 'Dzuhur', ru: 'Зухр' },
+    prayer_asr: { id: 'Ashar', ru: 'Аср' },
+    prayer_maghrib: { id: 'Maghrib', ru: 'Магриб' },
+    prayer_isha: { id: 'Isya', ru: 'Иша' },
+    prayer_src: { id: 'Perkiraan waktu · diperbarui otomatis', ru: 'Примерное время · обновляется автоматически' },
+    stat1: { id: 'Santri aktif', ru: 'Учеников сейчас' },
+    stat2: { id: 'Ustadz & Ustadzah', ru: 'Устазов и устазок' },
+    stat3: { id: 'Tahun berdiri', ru: 'Лет со дня основания' },
+    stat4: { id: 'Alumni hafidz', ru: 'Выпускников-хафизов' },
+    profil_eyebrow: { id: 'Tentang Kami', ru: 'О нас' },
+    profil_title: { id: 'Menuntut ilmu di atas manhaj yang lurus', ru: 'Обучение на верном, проверенном пути' },
+    profil_text: { id: `[PLACEHOLDER] Pondok Pesantren Ath-Thoifah Al Manshuroh didirikan pada tahun [....] di Lubuk Pakam, Kabupaten Deli Serdang. Kami membimbing santri untuk menghafal Al-Qur'an, memahami agama dengan benar, dan berakhlak mulia.`,
+                  ru: '[ПРИМЕР ТЕКСТА] Пондок Песантрен Ath-Thoifah Al Manshuroh основан в [....] году в Лубук-Пакаме, округ Дели Серданг. Мы готовим учеников к заучиванию Корана, правильному пониманию религии и благому нраву.' },
+    profil_visi_t: { id: 'Visi', ru: 'Миссия' },
+    profil_visi_p: { id: 'Menjadi pesantren yang melahirkan generasi berilmu, beramal, dan berakhlak Qur\'ani.', ru: '[ПРИМЕР] Растить поколение знающих, деятельных людей с нравом, основанным на Коране.' },
+    profil_misi_t: { id: 'Misi', ru: 'Задачи' },
+    profil_misi_p: { id: `Pembinaan tahfidz, pengajaran ilmu syar'i, bahasa Arab, serta pembiasaan adab sehari-hari.`, ru: '[ПРИМЕР] Заучивание Корана, исламские науки, арабский язык и воспитание повседневного благого нрава.' },
+    program_eyebrow: { id: 'Program Pendidikan', ru: 'Учебные программы' },
+    program_title: { id: 'Kurikulum yang seimbang', ru: 'Сбалансированная программа' },
+    program_lead: { id: `Perpaduan hafalan Al-Qur'an, ilmu agama, dan pendidikan umum.`, ru: 'Заучивание Корана, исламские науки и общеобразовательные предметы вместе.' },
+    card1_t: { id: `Tahfidz Al-Qur'an`, ru: 'Тахфиз Корана' },
+    card1_p: { id: `Hafalan dengan metode talaqqi dan muraja'ah harian, target mutqin.`, ru: 'Заучивание методом талаккы с ежедневным повторением, до уверенного знания наизусть.' },
+    card2_t: { id: 'Diniyah', ru: 'Исламские науки' },
+    card2_p: { id: 'Aqidah, fiqih, hadits, tafsir, dan sirah nabawiyah secara bertahap.', ru: 'Вероубеждение, фикх, хадисы, тафсир и жизнеописание Пророка ﷺ — постепенно.' },
+    card3_t: { id: 'Bahasa Arab', ru: 'Арабский язык' },
+    card3_p: { id: 'Nahwu, sharaf, dan praktik percakapan sebagai kunci memahami kitab.', ru: 'Грамматика, морфология и разговорная практика — ключ к пониманию книг.' },
+    card4_t: { id: 'Adab & Karakter', ru: 'Нрав и характер' },
+    card4_p: { id: 'Pembinaan akhlak, kemandirian, dan kedisiplinan dalam kehidupan asrama.', ru: 'Воспитание нрава, самостоятельности и дисциплины в жизни интерната.' },
+    keg_eyebrow: { id: 'Keseharian Santri', ru: 'День ученика' },
+    keg_title: { id: 'Satu hari di pesantren', ru: 'Один день в школе' },
+    keg_lead: { id: '[PLACEHOLDER] Contoh jadwal harian — sesuaikan dengan jadwal asli.', ru: '[ПРИМЕР] Расписание дня — заменить на настоящее.' },
+    slot1_t: { id: 'Qiyamul Lail', ru: 'Ночная молитва' },
+    slot1_p: { id: 'Sholat malam & Subuh berjamaah', ru: 'Ночная молитва и общий Фаджр' },
+    slot2_t: { id: 'Halaqah Tahfidz', ru: 'Урок заучивания' },
+    slot2_p: { id: 'Setoran hafalan baru', ru: 'Сдача нового материала наизусть' },
+    slot3_t: { id: 'Kelas Pagi', ru: 'Утренние уроки' },
+    slot3_p: { id: 'Diniyah & pelajaran umum', ru: 'Исламские и общие предметы' },
+    slot4_t: { id: 'Bahasa Arab', ru: 'Арабский язык' },
+    slot4_p: { id: 'Nahwu, sharaf, muhadatsah', ru: 'Грамматика, морфология, разговор' },
+    slot5_t: { id: 'Olahraga', ru: 'Спорт' },
+    slot5_p: { id: 'Kegiatan & ekstrakurikuler', ru: 'Кружки и активности' },
+    slot6_t: { id: `Muraja'ah`, ru: 'Повторение' },
+    slot6_p: { id: 'Mengulang hafalan & belajar', ru: 'Повторение заученного и учёба' },
+    gal_eyebrow: { id: 'Galeri', ru: 'Галерея' },
+    gal_title: { id: 'Suasana pesantren', ru: 'Атмосфера школы' },
+    gal_lead: { id: 'Kampus kami di tengah sawah Paluh Kemiri, Lubuk Pakam.', ru: 'Наш кампус среди рисовых полей Палух-Кемири, Лубук-Пакам.' },
+    daurah_eyebrow: { id: 'Kabar Terbaru', ru: 'Последние новости' },
+    daurah_text: { id: `Kajian Islam Ilmiah dalam rangkaian Dauroh Imam Asy-Syafi'i ke-14, bertema <em>"Manhaj Salaf di Zaman Fitnah dan Berubahnya Standar Kebenaran"</em> (منهج السلف في زمن الفتن وتغيّر الموازين).`,
+                 ru: `Научный семинар в рамках 14-й Даурох имама Аш-Шафии на тему <em>«Путь праведных предков во времена смут и смещения понятий об истине»</em> (منهج السلف في زمن الفتن وتغيّر الموازين).` },
+    daurah_f1: { id: 'Musyrif / Pembina Dauroh: Syeikh Ruzeiq bin Hamid Al Qurosy <em>hafizhahullah</em>', ru: 'Руководитель даурох: шейх Рузейк бин Хамид Аль-Куроси, <em>хафизахуллах</em>' },
+    daurah_f2: { id: 'Penceramah: Syeikh Adil Manshur Al Basya <em>hafizhahullah</em>', ru: 'Докладчик: шейх Адиль Мансур Аль-Басья, <em>хафизахуллах</em>' },
+    daurah_f3: { id: 'Tempat: Lubuk Pakam, Deli Serdang', ru: 'Место: Лубук-Пакам, Дели Серданг' },
+    daurah_f4: { id: 'Tanggal & jadwal acara: [PLACEHOLDER — belum terbaca dari poster]', ru: 'Дата и расписание: [пока не видно на присланном постере]' },
+    daurah_cta: { id: 'Tanya Jadwal via WhatsApp', ru: 'Спросить расписание в WhatsApp' },
+    ppdb_eyebrow: { id: 'PPDB [2027/2028]', ru: 'Приём [2027/2028]' },
+    ppdb_title: { id: 'Pendaftaran santri baru telah dibuka', ru: 'Приём новых учеников открыт' },
+    ppdb_lead: { id: 'Kuota terbatas. Hubungi panitia melalui WhatsApp atau isi formulir online.', ru: 'Мест немного. Свяжитесь с приёмной комиссией в WhatsApp или заполните анкету онлайн.' },
+    ppdb_cta1: { id: 'Isi Formulir', ru: 'Заполнить анкету' },
+    ppdb_cta2: { id: 'Tanya via WhatsApp', ru: 'Спросить в WhatsApp' },
+    step1: { id: 'Isi formulir pendaftaran', ru: 'Заполнить анкету' },
+    step2: { id: 'Lengkapi berkas (KK, akta, foto)', ru: 'Собрать документы (справка о семье, свидетельство, фото)' },
+    step3: { id: `Tes baca Al-Qur'an & wawancara`, ru: 'Тест по чтению Корана и собеседование' },
+    step4: { id: 'Pengumuman & daftar ulang', ru: 'Результаты и подтверждение места' },
+    berita_eyebrow: { id: 'Kabar Pesantren', ru: 'Жизнь школы' },
+    berita_title: { id: 'Berita & kegiatan terbaru', ru: 'Новости и мероприятия' },
+    news1_t: { id: 'Wisuda tahfidz angkatan [..]', ru: 'Выпуск хафизов [..] набора' },
+    news1_p: { id: '[PLACEHOLDER] Alhamdulillah, santri menyelesaikan hafalan...', ru: '[ПРИМЕР] Альхамдулиллях, ученики завершили заучивание Корана...' },
+    news2_t: { id: 'Kajian umum bersama wali santri', ru: 'Общая встреча с родителями' },
+    news2_p: { id: '[PLACEHOLDER] Kegiatan rutin bulanan untuk orang tua...', ru: '[ПРИМЕР] Ежемесячная встреча для родителей учеников...' },
+    news3_t: { id: 'Pembukaan tahun ajaran baru', ru: 'Начало нового учебного года' },
+    news3_p: { id: '[PLACEHOLDER] Menyambut santri baru di asrama...', ru: '[ПРИМЕР] Встречаем новых учеников в интернате...' },
+    peta_eyebrow: { id: 'Dari Mana Saja', ru: 'Откуда угодно' },
+    peta_title: { id: 'Temukan kami di peta dunia', ru: 'Найдите нас на карте мира' },
+    peta_lead: { id: 'Putar bumi, perbesar dengan roda mouse atau dua jari — atau terbang langsung ke pesantren.', ru: 'Крутите Землю, приближайте колёсиком мыши или двумя пальцами — или летите прямо к школе.' },
+    peta_fly: { id: 'Terbang ke pesantren ✈', ru: 'Полететь к школе ✈' },
+    peta_reset: { id: 'Lihat seluruh bumi', ru: 'Вся Земля' },
+    peta_loading: { id: 'Memuat bola dunia…', ru: 'Загружаем глобус…' },
+    peta_route: { id: 'Rute di Google Maps ↗', ru: 'Маршрут в Google Картах ↗' },
+    kontak_eyebrow: { id: 'Kunjungi Kami', ru: 'Приезжайте к нам' },
+    kontak_title: { id: 'Lokasi & kontak', ru: 'Адрес и контакты' },
+    c_alamat: { id: 'Alamat', ru: 'Адрес' },
+    c_email: { id: 'Email', ru: 'Почта' },
+    c_maps: { id: 'Buka di Google Maps ↗', ru: 'Открыть в Google Картах ↗' },
+    foot_sub: { id: 'Pondok Pesantren · Lubuk Pakam', ru: 'Пондок Песантрен · Лубук-Пакам' },
+  };
+
+  function setLang(lang) {
+    if (lang !== 'id' && lang !== 'ru') return; // EN/AR: страницы ещё не готовы
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const entry = i18n[el.dataset.i18n];
+      if (entry && entry[lang]) el.innerHTML = entry[lang];
+    });
+    document.querySelectorAll('[data-langswitch] a').forEach(a => a.classList.toggle('on', a.dataset.lang === lang));
+    try { localStorage.setItem('siteLang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('[data-langswitch] a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = a.dataset.lang;
+      if (lang !== 'id' && lang !== 'ru') {
+        a.title = 'Скоро — пока переведены только ID и RU';
+        return;
+      }
+      setLang(lang);
+    });
+  });
+
+  try {
+    const saved = localStorage.getItem('siteLang');
+    if (saved === 'ru') setLang('ru');
+  } catch (e) {}
 </script>
 </body>
 </html>
