@@ -1,0 +1,11 @@
+# Скриншоты чужих сайтов — только локально
+design-references/screenshots/
+
+node_modules/
+_site/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Картинка, сгенерированная ИИ, — не публиковать как фото школы
+Папка с фотографиями школы/Gemini_Generated_Image_*

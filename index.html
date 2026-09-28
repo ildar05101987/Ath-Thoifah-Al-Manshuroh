@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ath-Thoifah Al Manshuroh — Pondok Pesantren Lubuk Pakam</title>
+<meta name="description" content="Pondok Pesantren Ath-Thoifah Al Manshuroh (Ath-Thaifah Al-Manshurah), Lubuk Pakam, Deli Serdang. Pendidikan Al-Qur'an, adab, dan ilmu syar'i.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07130f;
+    --surface: #0d1f19;
+    --surface-2: #132a22;
+    --line: rgba(212, 175, 90, 0.18);
+    --gold: #d4af5a;
+    --gold-soft: #e9d39a;
+    --text: #ece6d6;
+    --muted: #a4ad9f;
+    --radius: 18px;
+    --font-head: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Rubik", system-ui, sans-serif;
+    --font-ar: "Amiri", serif;
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='1'%3E%3Crect x='22' y='22' width='36' height='36'/%3E%3Crect x='22' y='22' width='36' height='36' transform='rotate(45 40 40)'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3Cpath d='M0 0L14 14M80 0L66 14M0 80L14 66M80 80L66 66'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.65; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: min(1160px, 100% - 32px); margin-inline: auto; }
+  .ar { font-family: var(--font-ar); direction: rtl; }
+  h1, h2, h3 { font-family: var(--font-head); font-weight: 600; line-height: 1.15; }
+  .eyebrow { color: var(--gold); font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; }
+  section { padding: 96px 0; position: relative; }
+  .section-head { max-width: 640px; margin-bottom: 48px; }
+  .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin: 10px 0 14px; }
+  .section-head p { color: var(--muted); }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 999px; font-weight: 600; font-size: .95rem; transition: .25s; border: 1px solid transparent; }
+  .btn-gold { background: linear-gradient(135deg, var(--gold-soft), var(--gold)); color: #1a1405; box-shadow: 0 10px 30px -10px rgba(212,175,90,.6); }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -12px rgba(212,175,90,.8); }
+  .btn-ghost { border-color: var(--line); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold-soft); }
+
+  /* Header */
+  header { position: fixed; inset: 0 0 auto; z-index: 50; transition: .3s; }
+  header.scrolled { background: rgba(7,19,15,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo-mark { width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--gold); display: grid; place-items: center; font-family: var(--font-ar); color: var(--gold); font-size: 1.3rem; background: var(--surface); }
+  .logo-text strong { display: block; font-family: var(--font-head); font-size: 1.05rem; }
+  .logo-text span { font-size: .72rem; color: var(--muted); letter-spacing: .08em; }
+  .menu { display: flex; gap: 30px; list-style: none; font-size: .92rem; }
+  .menu a { color: var(--muted); transition: .2s; }
+  .menu a:hover { color: var(--gold-soft); }
+  .nav .btn { padding: 10px 20px; }
+  .langs { display: flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; font-size: .78rem; font-weight: 500; }
+  .langs a { padding: 5px 10px; border-radius: 999px; color: var(--muted); transition: .2s; }
+  .langs a.ar { font-size: .95rem; line-height: 1.1; }
+  .langs a:hover { color: var(--gold-soft); }
+  .langs a.on { background: var(--gold); color: #1a1405; }
+  .m-langs { display: none !important; }
+  .menu.open .m-langs { display: flex !important; }
+  .hero-grid > *, .about-grid > * { min-width: 0; }
+  .burger { display: none; background: none; border: 1px solid var(--line); border-radius: 10px; width: 44px; height: 44px; color: var(--text); font-size: 1.3rem; cursor: pointer; }
+
+  /* Hero */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 0 80px; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: var(--pattern); opacity: .07; mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 70%); }
+  .hero::after { content: ""; position: absolute; width: 700px; height: 700px; right: -200px; top: -150px; background: radial-gradient(circle, rgba(212,175,90,.16), transparent 65%); pointer-events: none; }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+  .bismillah { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--gold); margin-bottom: 22px; text-align: left; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); margin: 14px 0 22px; }
+  .hero h1 em { font-style: italic; color: var(--gold-soft); font-weight: 400; }
+  .hero p.lead { color: var(--muted); font-size: 1.1rem; max-width: 540px; margin-bottom: 34px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  /* Prayer card */
+  .prayer { background: linear-gradient(160deg, var(--surface-2), var(--surface)); border: 1px solid var(--line); border-radius: 26px; padding: 30px; position: relative; overflow: hidden; }
+  .prayer::before { content: ""; position: absolute; inset: 0; background: var(--pattern); opacity: .05; }
+  .arch { position: absolute; top: -120px; left: 50%; translate: -50% 0; width: 260px; height: 260px; border: 1px solid var(--line); border-radius: 50%; }
+  .prayer-head { position: relative; display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+  .prayer-head h3 { font-size: 1.3rem; }
+  .prayer-date { color: var(--muted); font-size: .82rem; position: relative; margin-bottom: 20px; }
+  .prayer ul { list-style: none; position: relative; }
+  .prayer li { display: flex; justify-content: space-between; padding: 12px 14px; border-radius: 12px; font-size: .95rem; }
+  .prayer li + li { border-top: 1px solid rgba(255,255,255,.04); }
+  .prayer li span:last-child { font-variant-numeric: tabular-nums; color: var(--gold-soft); font-weight: 600; }
+  .prayer li.next { background: rgba(212,175,90,.1); border: 1px solid var(--line); }
+  .prayer li.next span:first-child::after { content: " · berikutnya"; color: var(--gold); font-size: .75rem; }
+  .prayer small { display: block; margin-top: 14px; color: var(--muted); font-size: .72rem; position: relative; }
+
+  /* Stats */
+  .stats { padding: 0; margin-top: -30px; z-index: 2; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .stat { padding: 30px 24px; text-align: center; }
+  .stat + .stat { border-left: 1px solid var(--line); }
+  .stat b { display: block; font-family: var(--font-head); font-size: 2.4rem; color: var(--gold-soft); font-weight: 600; }
+  .stat span { color: var(--muted); font-size: .88rem; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .photo { aspect-ratio: 4/5; border-radius: 200px 200px var(--radius) var(--radius); border: 1px solid var(--line); background: linear-gradient(180deg, rgba(212,175,90,.08), transparent), var(--surface); display: grid; place-items: center; color: var(--muted); font-size: .85rem; position: relative; overflow: hidden; }
+  .photo::before { content: ""; position: absolute; inset: 14px; border-radius: 190px 190px 10px 10px; border: 1px solid var(--line); }
+  .vm { display: grid; gap: 18px; margin-top: 30px; }
+  .vm-item { padding: 22px 24px; border-left: 2px solid var(--gold); background: var(--surface); border-radius: 0 14px 14px 0; }
+  .vm-item h3 { font-size: 1.1rem; color: var(--gold-soft); margin-bottom: 6px; }
+  .vm-item p { color: var(--muted); font-size: .95rem; }
+
+  /* Programs */
+  .programs { background: var(--surface); border-block: 1px solid var(--line); }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; transition: .3s; position: relative; overflow: hidden; }
+  .card:hover { transform: translateY(-6px); border-color: var(--gold); }
+  .card .ar { font-size: 2rem; color: var(--gold); display: block; text-align: left; margin-bottom: 18px; }
+  .card h3 { font-size: 1.25rem; margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: .92rem; }
+
+  /* Schedule */
+  .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+  .slot { padding: 26px 20px 0 0; position: relative; }
+  .slot::before { content: ""; position: absolute; top: -6px; left: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 5px var(--bg), 0 0 20px var(--gold); }
+  .slot time { color: var(--gold-soft); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .slot h3 { font-size: 1.05rem; margin: 6px 0 4px; }
+  .slot p { color: var(--muted); font-size: .86rem; }
+
+  /* PPDB */
+  .ppdb-box { border-radius: 28px; padding: 64px; background: radial-gradient(circle at 85% 20%, rgba(212,175,90,.22), transparent 50%), linear-gradient(135deg, var(--surface-2), var(--surface)); border: 1px solid var(--line); display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; position: relative; overflow: hidden; }
+  .ppdb-box::before { content: ""; position: absolute; inset: 0; background: var(--pattern); opacity: .05; }
+  .ppdb-box > * { position: relative; }
+  .ppdb-box h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin: 10px 0 14px; }
+  .ppdb-box p { color: var(--muted); }
+  .steps { list-style: none; display: grid; gap: 12px; counter-reset: s; }
+  .steps li { counter-increment: s; display: flex; gap: 14px; align-items: center; padding: 14px 18px; background: rgba(7,19,15,.6); border: 1px solid var(--line); border-radius: 14px; font-size: .94rem; }
+  .steps li::before { content: counter(s); width: 30px; height: 30px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: #1a1405; font-weight: 700; font-size: .85rem; }
+
+  /* News */
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .news { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); transition: .3s; }
+  .news:hover { border-color: var(--gold); }
+  .news-img { aspect-ratio: 16/10; background: var(--pattern) center/60px, var(--surface-2); opacity: .9; display: grid; place-items: center; color: var(--muted); font-size: .8rem; }
+  .news-body { padding: 22px; }
+  .news-body time { color: var(--gold); font-size: .78rem; letter-spacing: .08em; }
+  .news-body h3 { font-size: 1.15rem; margin: 8px 0; }
+  .news-body p { color: var(--muted); font-size: .9rem; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 30px; }
+  .contact-list { display: grid; gap: 14px; }
+  .contact-item { padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  .contact-item span { font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); }
+  .contact-item p { margin-top: 4px; }
+  .map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); min-height: 380px; }
+  .map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; filter: invert(.9) hue-rotate(180deg) saturate(.6) brightness(.9); }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--line); padding: 50px 0 30px; color: var(--muted); font-size: .88rem; }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; align-items: center; }
+  .foot .ar { font-size: 1.4rem; color: var(--gold); }
+
+  .wa { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 30px rgba(0,0,0,.4); transition: .2s; }
+  .wa:hover { transform: scale(1.08); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .hero-grid, .about-grid, .ppdb-box, .contact-grid { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .news-grid { grid-template-columns: 1fr 1fr; }
+    .ppdb-box { padding: 40px 28px; }
+    .photo { max-width: 420px; }
+  }
+  @media (max-width: 760px) {
+    .menu, .nav .btn { display: none; }
+    .burger { display: block; }
+    .nav > .langs { display: none; }
+    .menu.open .m-langs { display: flex; align-self: flex-start; }
+    .logo-text span { display: none; }
+    .logo-text strong { font-size: 1rem; }
+    .menu.open { display: flex; flex-direction: column; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 16px 28px; background: rgba(7,19,15,.97); border-bottom: 1px solid var(--line); gap: 18px; font-size: 1.05rem; }
+    header:has(.menu.open) { background: rgba(7,19,15,.97); }
+    section { padding: 70px 0; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(3) { border-left: 0; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .cards, .news-grid { grid-template-columns: 1fr; }
+    .slot { padding-bottom: 26px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } .reveal { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<header id="top">
+  <nav class="wrap nav">
+    <a href="#" class="logo">
+      <div class="logo-mark">ط</div>
+      <div class="logo-text"><strong>Ath-Thoifah Al Manshuroh</strong><span>PONDOK PESANTREN · LUBUK PAKAM</span></div>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#kegiatan">Kegiatan</a></li>
+      <li><a href="#berita">Berita</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li class="m-langs langs"><a href="/id/" class="on">ID</a><a href="/en/">EN</a><a href="/ru/">RU</a><a href="/ar/" class="ar">عربي</a></li>
+    </ul>
+    <div class="langs" aria-label="Bahasa">
+      <a href="/id/" class="on" hreflang="id">ID</a><a href="/en/" hreflang="en">EN</a><a href="/ru/" hreflang="ru">RU</a><a href="/ar/" hreflang="ar" class="ar">عربي</a>
+    </div>
+    <a href="#ppdb" class="btn btn-gold">Daftar Sekarang</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <p class="bismillah ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+      <span class="eyebrow">Pondok Pesantren · Deli Serdang</span>
+      <h1>Membentuk generasi <em>Qur'ani</em> yang berilmu dan beradab</h1>
+      <p class="lead">Pendidikan Al-Qur'an, ilmu syar'i, dan bahasa Arab di lingkungan yang tenang, disiplin, dan penuh kasih sayang di Lubuk Pakam.</p>
+      <div class="hero-actions">
+        <a href="#ppdb" class="btn btn-gold">Pendaftaran Santri Baru →</a>
+        <a href="#profil" class="btn btn-ghost">Kenali Kami</a>
+      </div>
+    </div>
+
+    <aside class="prayer reveal" aria-label="Jadwal sholat">
+      <div class="arch"></div>
+      <div class="prayer-head"><h3>Jadwal Sholat</h3><span class="ar" style="color:var(--gold)">مواقيت الصلاة</span></div>
+      <p class="prayer-date" id="pdate">Lubuk Pakam</p>
+      <ul id="plist">
+        <li data-k="Fajr"><span>Subuh</span><span>04:58</span></li>
+        <li data-k="Dhuhr"><span>Dzuhur</span><span>12:17</span></li>
+        <li data-k="Asr"><span>Ashar</span><span>15:26</span></li>
+        <li data-k="Maghrib"><span>Maghrib</span><span>18:20</span></li>
+        <li data-k="Isha"><span>Isya</span><span>19:30</span></li>
+      </ul>
+      <small id="psrc">Perkiraan waktu · diperbarui otomatis</small>
+    </aside>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats-grid reveal">
+    <div class="stat"><b>[000]+</b><span>Santri aktif</span></div>
+    <div class="stat"><b>[00]</b><span>Ustadz &amp; Ustadzah</span></div>
+    <div class="stat"><b>[00]</b><span>Tahun berdiri</span></div>
+    <div class="stat"><b>[00]</b><span>Alumni hafidz</span></div>
+  </div>
+</section>
+
+<section id="profil">
+  <div class="wrap about-grid">
+    <div class="photo reveal">[ Foto gedung pesantren ]</div>
+    <div class="reveal">
+      <span class="eyebrow">Tentang Kami</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 16px">Menuntut ilmu di atas manhaj yang lurus</h2>
+      <p style="color:var(--muted)">[PLACEHOLDER] Pondok Pesantren Ath-Thoifah Al Manshuroh didirikan pada tahun [....] di Lubuk Pakam, Kabupaten Deli Serdang. Kami membimbing santri untuk menghafal Al-Qur'an, memahami agama dengan benar, dan berakhlak mulia.</p>
+      <div class="vm">
+        <div class="vm-item"><h3>Visi</h3><p>[PLACEHOLDER] Menjadi pesantren yang melahirkan generasi berilmu, beramal, dan berakhlak Qur'ani.</p></div>
+        <div class="vm-item"><h3>Misi</h3><p>[PLACEHOLDER] Pembinaan tahfidz, pengajaran ilmu syar'i, bahasa Arab, serta pembiasaan adab sehari-hari.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="program" class="programs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Program Pendidikan</span>
+      <h2>Kurikulum yang seimbang</h2>
+      <p>Perpaduan hafalan Al-Qur'an, ilmu agama, dan pendidikan umum.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal"><span class="ar">تحفيظ</span><h3>Tahfidz Al-Qur'an</h3><p>Hafalan dengan metode talaqqi dan muraja'ah harian, target mutqin.</p></article>
+      <article class="card reveal"><span class="ar">علوم</span><h3>Diniyah</h3><p>Aqidah, fiqih, hadits, tafsir, dan sirah nabawiyah secara bertahap.</p></article>
+      <article class="card reveal"><span class="ar">لغة</span><h3>Bahasa Arab</h3><p>Nahwu, sharaf, dan praktik percakapan sebagai kunci memahami kitab.</p></article>
+      <article class="card reveal"><span class="ar">أدب</span><h3>Adab &amp; Karakter</h3><p>Pembinaan akhlak, kemandirian, dan kedisiplinan dalam kehidupan asrama.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="kegiatan">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Keseharian Santri</span>
+      <h2>Satu hari di pesantren</h2>
+      <p>[PLACEHOLDER] Contoh jadwal harian — sesuaikan dengan jadwal asli.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="slot"><time>04:00</time><h3>Qiyamul Lail</h3><p>Sholat malam &amp; Subuh berjamaah</p></div>
+      <div class="slot"><time>05:30</time><h3>Halaqah Tahfidz</h3><p>Setoran hafalan baru</p></div>
+      <div class="slot"><time>08:00</time><h3>Kelas Pagi</h3><p>Diniyah &amp; pelajaran umum</p></div>
+      <div class="slot"><time>13:30</time><h3>Bahasa Arab</h3><p>Nahwu, sharaf, muhadatsah</p></div>
+      <div class="slot"><time>16:30</time><h3>Olahraga</h3><p>Kegiatan &amp; ekstrakurikuler</p></div>
+      <div class="slot"><time>19:45</time><h3>Muraja'ah</h3><p>Mengulang hafalan &amp; belajar</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ppdb">
+  <div class="wrap">
+    <div class="ppdb-box reveal">
+      <div>
+        <span class="eyebrow">PPDB [2027/2028]</span>
+        <h2>Pendaftaran santri baru telah dibuka</h2>
+        <p>Kuota terbatas. Hubungi panitia melalui WhatsApp atau isi formulir online.</p>
+        <div class="hero-actions" style="margin-top:28px">
+          <a href="#" class="btn btn-gold">Isi Formulir</a>
+          <a href="https://wa.me/62XXXXXXXXXX" class="btn btn-ghost">Tanya via WhatsApp</a>
+        </div>
+      </div>
+      <ol class="steps">
+        <li>Isi formulir pendaftaran</li>
+        <li>Lengkapi berkas (KK, akta, foto)</li>
+        <li>Tes baca Al-Qur'an &amp; wawancara</li>
+        <li>Pengumuman &amp; daftar ulang</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="berita" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Kabar Pesantren</span>
+      <h2>Berita &amp; kegiatan terbaru</h2>
+    </div>
+    <div class="news-grid">
+      <article class="news reveal"><div class="news-img">[ Foto ]</div><div class="news-body"><time>12 SEP 2026</time><h3>Wisuda tahfidz angkatan [..]</h3><p>[PLACEHOLDER] Alhamdulillah, santri menyelesaikan hafalan...</p></div></article>
+      <article class="news reveal"><div class="news-img">[ Foto ]</div><div class="news-body"><time>28 AGU 2026</time><h3>Kajian umum bersama wali santri</h3><p>[PLACEHOLDER] Kegiatan rutin bulanan untuk orang tua...</p></div></article>
+      <article class="news reveal"><div class="news-img">[ Foto ]</div><div class="news-body"><time>10 AGU 2026</time><h3>Pembukaan tahun ajaran baru</h3><p>[PLACEHOLDER] Menyambut santri baru di asrama...</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="kontak" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Kunjungi Kami</span>
+      <h2>Lokasi &amp; kontak</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-list reveal">
+        <div class="contact-item"><span>Alamat</span><p>Jl. Benteng Link. 1, Kel. Paluh Kemiri, Kec. Lubuk Pakam, Kab. Deli Serdang, Sumatera Utara</p></div>
+        <div class="contact-item"><span>WhatsApp</span><p>+62 [XXX-XXXX-XXXX]</p></div>
+        <div class="contact-item"><span>Email</span><p>[email@pesantren.sch.id]</p></div>
+        <a class="btn btn-ghost" href="https://maps.app.goo.gl/exViczW73zwKNhY7A" target="_blank" rel="noopener">Buka di Google Maps ↗</a>
+      </div>
+      <div class="map reveal">
+        <iframe loading="lazy" title="Peta lokasi" src="https://www.google.com/maps?q=Pondok+Pesantren+Ath-Thaifah+Al-Manshurah+Deli+Serdang&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong style="color:var(--text);font-family:var(--font-head)">Ath-Thoifah Al Manshuroh</strong><br>© <span id="yr">2026</span> Pondok Pesantren · Lubuk Pakam</div>
+    <p class="ar">وَقُلْ رَبِّ زِدْنِي عِلْمًا</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/62XXXXXXXXXX" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.4 2.5 1.5.3.2.5.1.6 0l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+</a>
+
+<script>
+  // Header on scroll + mobile menu
+  const header = document.querySelector('header');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 30));
+  const menu = document.getElementById('menu');
+  document.getElementById('burger').onclick = () => menu.classList.toggle('open');
+  menu.querySelectorAll('a').forEach(a => a.onclick = () => menu.classList.remove('open'));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Prayer times for Lubuk Pakam (aladhan.com, method 20 = Kemenag RI)
+  function markNext() {
+    const now = new Date(), mins = now.getHours() * 60 + now.getMinutes();
+    const items = [...document.querySelectorAll('#plist li')];
+    items.forEach(li => li.classList.remove('next'));
+    const next = items.find(li => { const [h, m] = li.lastElementChild.textContent.split(':'); return h * 60 + +m > mins; }) || items[0];
+    next.classList.add('next');
+  }
+  markNext();
+  fetch('https://api.aladhan.com/v1/timings?latitude=3.5536&longitude=98.8720&method=20')
+    .then(r => r.json())
+    .then(({ data }) => {
+      document.querySelectorAll('#plist li').forEach(li => li.lastElementChild.textContent = data.timings[li.dataset.k].slice(0, 5));
+      document.getElementById('pdate').textContent = `Lubuk Pakam · ${data.date.hijri.day} ${data.date.hijri.month.en} ${data.date.hijri.year} H`;
+      document.getElementById('psrc').textContent = 'Sumber: aladhan.com · metode Kemenag RI';
+      markNext();
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>
