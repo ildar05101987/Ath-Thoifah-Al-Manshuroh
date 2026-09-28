@@ -11,6 +11,8 @@
 ## Адрес
 - **Jl. Benteng Link. 1, Kel. Paluh Kemiri, Kec. Lubuk Pakam, Kab. Deli Serdang, Sumatera Utara** (ворота, `photo_5`).
 - Карта: https://maps.app.goo.gl/exViczW73zwKNhY7A
+- ⚠ Карточка в Google Maps подписана адресом «Tanjung Mulia, Tanjung Morawa, Deli Serdang 20514» — это не совпадает с вывеской (Paluh Kemiri, Lubuk Pakam). Уточнить у школы и при необходимости исправить карточку в Google.
+- Точных GPS-координат здания пока нет. Глобус указывает на центр Paluh Kemiri (3.5618, 98.8574, по OpenStreetMap). Нужна точка с Google Maps (долгое нажатие на здании → скопировать координаты).
 
 ## Программы песантрена (вывеска, `photo_6`)
 | Ступень | Эквивалент |

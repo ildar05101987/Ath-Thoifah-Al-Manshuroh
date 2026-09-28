@@ -81,8 +81,13 @@
   /* Hero */
   .hero { min-height: 100vh; display: flex; align-items: center; padding: 172px 0 80px; overflow: hidden; }
   header:has(.announce.hidden) ~ .hero { padding-top: 130px; }
-  .hero::before { content: ""; position: absolute; inset: 0; background: var(--pattern); opacity: .07; mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 70%); }
-  .hero::after { content: ""; position: absolute; width: 700px; height: 700px; right: -200px; top: -150px; background: radial-gradient(circle, rgba(212,175,90,.16), transparent 65%); pointer-events: none; }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .hero-bg::after { content: ""; position: absolute; inset: 0; background:
+      linear-gradient(90deg, rgba(7,19,15,.92) 0%, rgba(7,19,15,.72) 45%, rgba(7,19,15,.35) 100%),
+      linear-gradient(180deg, rgba(7,19,15,.55) 0%, transparent 30%, transparent 55%, var(--bg) 100%); }
+  .hero::before { content: ""; position: absolute; inset: 0; z-index: 0; background: var(--pattern); opacity: .06; mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 70%); }
+  .hero::after { content: ""; position: absolute; width: 700px; height: 700px; right: -200px; top: -150px; background: radial-gradient(circle, rgba(212,175,90,.14), transparent 65%); pointer-events: none; }
   .hero-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
   .bismillah { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--gold); margin-bottom: 22px; text-align: left; }
   .hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); margin: 14px 0 22px; }
@@ -116,7 +121,8 @@
   /* About */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
   .photo { aspect-ratio: 4/5; border-radius: 200px 200px var(--radius) var(--radius); border: 1px solid var(--line); background: linear-gradient(180deg, rgba(212,175,90,.08), transparent), var(--surface); display: grid; place-items: center; color: var(--muted); font-size: .85rem; position: relative; overflow: hidden; }
-  .photo::before { content: ""; position: absolute; inset: 14px; border-radius: 190px 190px 10px 10px; border: 1px solid var(--line); }
+  .photo::before { content: ""; position: absolute; inset: 14px; z-index: 1; border-radius: 190px 190px 10px 10px; border: 1px solid rgba(233,211,154,.45); pointer-events: none; }
+  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% center; }
   .vm { display: grid; gap: 18px; margin-top: 30px; }
   .vm-item { padding: 22px 24px; border-left: 2px solid var(--gold); background: var(--surface); border-radius: 0 14px 14px 0; }
   .vm-item h3 { font-size: 1.1rem; color: var(--gold-soft); margin-bottom: 6px; }
@@ -167,7 +173,9 @@
   .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .news { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); transition: .3s; }
   .news:hover { border-color: var(--gold); }
-  .news-img { aspect-ratio: 16/10; background: var(--pattern) center/60px, var(--surface-2); opacity: .9; display: grid; place-items: center; color: var(--muted); font-size: .8rem; }
+  .news-img { aspect-ratio: 16/10; background: var(--surface-2); overflow: hidden; }
+  .news-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+  .news:hover .news-img img { transform: scale(1.04); }
   .news-body { padding: 22px; }
   .news-body time { color: var(--gold); font-size: .78rem; letter-spacing: .08em; }
   .news-body h3 { font-size: 1.15rem; margin: 8px 0; }
@@ -182,14 +190,45 @@
   .map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); min-height: 380px; }
   .map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; filter: invert(.9) hue-rotate(180deg) saturate(.6) brightness(.9); }
 
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 12px; }
+  .g-item { position: relative; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; padding: 0; background: var(--surface); cursor: zoom-in; }
+  .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s, filter .4s; filter: saturate(.85) brightness(.92); }
+  .g-item:hover img, .g-item:focus-visible img { transform: scale(1.04); filter: none; }
+  .g-item:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  .g-wide { grid-column: span 2; }
+  .lightbox { border: 0; padding: 0; background: transparent; max-width: min(1100px, 94vw); max-height: 90vh; margin: auto; }
+  .lightbox::backdrop { background: rgba(4,10,8,.9); }
+  .lightbox img { max-width: 100%; max-height: 88vh; border-radius: 12px; border: 1px solid var(--line); }
+  .lb-close { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: rgba(7,19,15,.8); color: var(--gold-soft); cursor: pointer; }
+  @media (max-width: 760px) { .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; } }
+
   /* Globe */
-  .globe-wrap { display: grid; justify-items: center; gap: 14px; padding-bottom: 30px; }
-  #globe { width: min(420px, 78vw); aspect-ratio: 1/1; touch-action: none; cursor: grab; }
-  #globe:active { cursor: grabbing; }
-  .globe-hint { color: var(--muted); font-size: .82rem; transition: opacity .4s; }
-  .globe-hint.hide { opacity: 0; }
-  .globe-found { color: var(--gold-soft); font-size: .95rem; font-weight: 500; text-align: center; opacity: 0; transform: translateY(6px); transition: .5s; }
-  .globe-found.show { opacity: 1; transform: none; }
+  .globe-stage { position: relative; height: min(640px, 80vh); min-height: 420px; border: 1px solid var(--line); border-radius: 24px; overflow: hidden; background: radial-gradient(ellipse at center, #0c1a24 0%, #03070a 70%); }
+  #globeViz { position: absolute; inset: 0; overflow: hidden; cursor: grab; }
+  #globeViz:active { cursor: grabbing; }
+  .globe-loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: .9rem; pointer-events: none; transition: opacity .6s; }
+  .globe-loading.hide { opacity: 0; }
+  .globe-controls { position: absolute; left: 20px; top: 20px; display: flex; flex-wrap: wrap; gap: 10px; z-index: 2; }
+  .globe-controls .btn { padding: 10px 18px; font-size: .86rem; }
+  .globe-controls .btn-ghost { background: rgba(7,19,15,.7); backdrop-filter: blur(8px); }
+  .globe-card { position: absolute; left: 20px; bottom: 20px; z-index: 2; width: min(340px, calc(100% - 40px)); background: rgba(7,19,15,.88); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; opacity: 0; transform: translateY(14px); pointer-events: none; transition: .5s; }
+  .globe-card.show { opacity: 1; transform: none; pointer-events: auto; }
+  .globe-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+  .globe-card-body { padding: 16px 18px 18px; display: grid; gap: 6px; }
+  .globe-card-body strong { font-family: var(--font-head); font-size: 1.2rem; color: var(--gold-soft); }
+  .globe-card-body p { color: var(--muted); font-size: .84rem; }
+  .globe-card-body a { color: var(--gold); font-size: .86rem; text-decoration: underline; text-underline-offset: 3px; }
+  .globe-card-close { position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 50%; border: 0; background: rgba(7,19,15,.75); color: var(--gold-soft); cursor: pointer; }
+  .globe-credit { position: absolute; right: 12px; bottom: 8px; z-index: 2; font-size: .66rem; color: rgba(236,230,214,.55); }
+  .globe-pin { width: 34px; color: var(--gold); cursor: pointer; pointer-events: auto; transform: translate(-50%, -100%); filter: drop-shadow(0 0 8px rgba(212,175,90,.7)); transition: opacity .25s; }
+  .globe-pin span { position: absolute; left: 50%; top: -26px; translate: -50% 0; white-space: nowrap; font: 600 11px var(--font-body); color: #1a1405; background: var(--gold-soft); padding: 3px 8px; border-radius: 999px; }
+  @media (max-width: 760px) {
+    .globe-stage { height: 520px; min-height: 0; border-radius: 18px; }
+    .globe-controls { left: 12px; top: 12px; right: 12px; }
+    .globe-card { left: 12px; bottom: 12px; width: calc(100% - 24px); }
+    .globe-card img { aspect-ratio: 21/9; }
+  }
 
   /* Footer */
   footer { border-top: 1px solid var(--line); padding: 50px 0 30px; color: var(--muted); font-size: .88rem; }
@@ -270,6 +309,7 @@
 </header>
 
 <section class="hero">
+  <div class="hero-bg" aria-hidden="true"><img src="assets/img/photos/hero-sunset.jpg" alt="" fetchpriority="high"></div>
   <div class="wrap hero-grid">
     <div class="reveal">
       <p class="bismillah ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
@@ -309,7 +349,7 @@
 
 <section id="profil">
   <div class="wrap about-grid">
-    <div class="photo reveal">[ Foto gedung pesantren ]</div>
+    <div class="photo reveal"><img src="assets/img/photos/gerbang.jpg" alt="Gerbang Pondok Pesantren Ath-Thoifah Al Manshuroh di Paluh Kemiri, Lubuk Pakam" loading="lazy"></div>
     <div class="reveal">
       <span class="eyebrow">Tentang Kami</span>
       <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin:10px 0 16px">Menuntut ilmu di atas manhaj yang lurus</h2>
@@ -354,6 +394,28 @@
       <div class="slot"><time>19:45</time><h3>Muraja'ah</h3><p>Mengulang hafalan &amp; belajar</p></div>
     </div>
   </div>
+</section>
+
+<section id="galeri" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Galeri</span>
+      <h2>Suasana pesantren</h2>
+      <p>Kampus kami di tengah sawah Paluh Kemiri, Lubuk Pakam.</p>
+    </div>
+    <div class="gallery reveal">
+      <button class="g-item g-wide" data-full="assets/img/photos/kampus-sawah.jpg"><img src="assets/img/photos/kampus-sawah.jpg" alt="Kampus pesantren dilihat dari sawah" loading="lazy"></button>
+      <button class="g-item" data-full="assets/img/photos/masjid.jpg"><img src="assets/img/photos/masjid.jpg" alt="Bagian dalam masjid" loading="lazy"></button>
+      <button class="g-item" data-full="assets/img/photos/aula.jpg"><img src="assets/img/photos/aula.jpg" alt="Aula" loading="lazy"></button>
+      <button class="g-item" data-full="assets/img/photos/serambi.jpg"><img src="assets/img/photos/serambi.jpg" alt="Serambi asrama" loading="lazy"></button>
+      <button class="g-item" data-full="assets/img/photos/lapangan.jpg"><img src="assets/img/photos/lapangan.jpg" alt="Lapangan pesantren" loading="lazy"></button>
+      <button class="g-item g-wide" data-full="assets/img/photos/sawah-senja.jpg"><img src="assets/img/photos/sawah-senja.jpg" alt="Sawah di samping pesantren saat senja" loading="lazy"></button>
+    </div>
+  </div>
+  <dialog class="lightbox" id="lightbox">
+    <img src="" alt="" id="lightboxImg">
+    <button class="lb-close" id="lightboxClose" aria-label="Tutup">✕</button>
+  </dialog>
 </section>
 
 <section id="daurah" style="padding-bottom:0">
@@ -408,24 +470,37 @@
       <h2>Berita &amp; kegiatan terbaru</h2>
     </div>
     <div class="news-grid">
-      <article class="news reveal"><div class="news-img">[ Foto ]</div><div class="news-body"><time>12 SEP 2026</time><h3>Wisuda tahfidz angkatan [..]</h3><p>[PLACEHOLDER] Alhamdulillah, santri menyelesaikan hafalan...</p></div></article>
-      <article class="news reveal"><div class="news-img">[ Foto ]</div><div class="news-body"><time>28 AGU 2026</time><h3>Kajian umum bersama wali santri</h3><p>[PLACEHOLDER] Kegiatan rutin bulanan untuk orang tua...</p></div></article>
-      <article class="news reveal"><div class="news-img">[ Foto ]</div><div class="news-body"><time>10 AGU 2026</time><h3>Pembukaan tahun ajaran baru</h3><p>[PLACEHOLDER] Menyambut santri baru di asrama...</p></div></article>
+      <article class="news reveal"><div class="news-img"><img src="assets/img/photos/masjid.jpg" alt="Masjid pesantren" loading="lazy"></div><div class="news-body"><time>12 SEP 2026</time><h3>Wisuda tahfidz angkatan [..]</h3><p>[PLACEHOLDER] Alhamdulillah, santri menyelesaikan hafalan...</p></div></article>
+      <article class="news reveal"><div class="news-img"><img src="assets/img/photos/aula.jpg" alt="Aula pesantren" loading="lazy"></div><div class="news-body"><time>28 AGU 2026</time><h3>Kajian umum bersama wali santri</h3><p>[PLACEHOLDER] Kegiatan rutin bulanan untuk orang tua...</p></div></article>
+      <article class="news reveal"><div class="news-img"><img src="assets/img/photos/serambi.jpg" alt="Serambi asrama" loading="lazy"></div><div class="news-body"><time>10 AGU 2026</time><h3>Pembukaan tahun ajaran baru</h3><p>[PLACEHOLDER] Menyambut santri baru di asrama...</p></div></article>
     </div>
   </div>
 </section>
 
 <section id="peta" style="padding-bottom:0">
   <div class="wrap">
-    <div class="section-head reveal" style="margin-inline:auto;text-align:center;max-width:560px">
+    <div class="section-head reveal">
       <span class="eyebrow">Dari Mana Saja</span>
       <h2>Temukan kami di peta dunia</h2>
-      <p>Putar bola dunia — akan berhenti tepat di Lubuk Pakam, Indonesia.</p>
+      <p>Putar bumi, perbesar dengan roda mouse atau dua jari — atau terbang langsung ke pesantren.</p>
     </div>
-    <div class="globe-wrap reveal">
-      <canvas id="globe" width="560" height="560" role="img" aria-label="Globe interaktif menuju Lubuk Pakam, Indonesia"></canvas>
-      <p class="globe-hint" id="globeHint">Seret untuk memutar ↻</p>
-      <p class="globe-found" id="globeFound">📍 Lubuk Pakam, Indonesia — Pondok Pesantren Ath-Thoifah Al Manshuroh</p>
+    <div class="globe-stage">
+      <div id="globeViz" role="img" aria-label="Bola dunia interaktif dengan penanda Pondok Pesantren Ath-Thoifah Al Manshuroh di Lubuk Pakam, Indonesia"></div>
+      <div class="globe-loading" id="globeLoading">Memuat bola dunia…</div>
+      <div class="globe-controls">
+        <button class="btn btn-gold" id="globeFly">Terbang ke pesantren ✈</button>
+        <button class="btn btn-ghost" id="globeReset">Lihat seluruh bumi</button>
+      </div>
+      <div class="globe-card" id="globeCard">
+        <button class="globe-card-close" id="globeCardClose" aria-label="Tutup">✕</button>
+        <img src="assets/img/photos/gerbang.jpg" alt="Gerbang pesantren" loading="lazy">
+        <div class="globe-card-body">
+          <strong>Ath-Thoifah Al Manshuroh</strong>
+          <p>Jl. Benteng Link. 1, Kel. Paluh Kemiri, Kec. Lubuk Pakam, Kab. Deli Serdang, Sumatera Utara</p>
+          <a href="https://maps.app.goo.gl/exViczW73zwKNhY7A" target="_blank" rel="noopener">Rute di Google Maps ↗</a>
+        </div>
+      </div>
+      <div class="globe-credit" id="globeCredit">Bumi: NASA Blue Marble</div>
     </div>
   </div>
 </section>
@@ -514,162 +589,120 @@
     })
     .catch(() => {});
 
-  // Globe — wireframe globe (graticule, no external library), settles on Lubuk Pakam
+  // Gallery lightbox
   (() => {
-    const canvas = document.getElementById('globe');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const hint = document.getElementById('globeHint');
-    const found = document.getElementById('globeFound');
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    if (!lb || typeof lb.showModal !== 'function') return;
+    document.querySelectorAll('.g-item').forEach(btn => btn.addEventListener('click', () => {
+      lbImg.src = btn.dataset.full;
+      lbImg.alt = btn.querySelector('img').alt;
+      lb.showModal();
+    }));
+    document.getElementById('lightboxClose').onclick = () => lb.close();
+    lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+  })();
 
-    const TARGET_LAT = 3.556 * Math.PI / 180;
-    const TARGET_LON = 98.872 * Math.PI / 180;
-    const target3D = {
-      x: Math.cos(TARGET_LAT) * Math.sin(TARGET_LON),
-      y: Math.sin(TARGET_LAT),
-      z: Math.cos(TARGET_LAT) * Math.cos(TARGET_LON),
-    };
-    const homeAngleY = -Math.atan2(target3D.x, target3D.z);
-    const TILT = -0.22;
+  // Globe — real Earth like webglearth.com (globe.gl + three.js, vendored in assets/js).
+  // Library (~1.9 MB) loads only when the section gets close to the screen.
+  (() => {
+    const stage = document.getElementById('globeViz');
+    if (!stage) return;
+    // Paluh Kemiri, Lubuk Pakam (адрес с ворот). Заменить на точные GPS-координаты здания, когда будут.
+    const SCHOOL = { lat: 3.5618, lng: 98.8574 };
+    // Спутниковые плитки для приближения до уровня зданий. Esri World Imagery — требует подписи авторства.
+    const TILE_URL = (x, y, l) => `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${l}/${y}/${x}`;
+    const loading = document.getElementById('globeLoading');
+    const card = document.getElementById('globeCard');
+    const credit = document.getElementById('globeCredit');
+    let world = null, started = false, flying = false;
 
-    let angleY = homeAngleY + 0.9; // старт не точно на маркaze, чтобы было что находить
-    let velocity = 0.0022; // тихое авто-вращение, пока пользователь не тронул
-    let dragging = false;
-    let lastX = 0;
-    let settling = false;
-    let hasInteracted = false;
-    const cosT = Math.cos(TILT), sinT = Math.sin(TILT);
+    function loadScript(src) {
+      return new Promise((ok, fail) => {
+        const s = document.createElement('script');
+        s.src = src; s.onload = ok; s.onerror = fail;
+        document.head.appendChild(s);
+      });
+    }
+    function webglOk() {
+      try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch (e) { return false; }
+    }
+    function tilesReachable() {
+      return new Promise(res => {
+        const img = new Image();
+        const t = setTimeout(() => res(false), 5000);
+        img.onload = () => { clearTimeout(t); res(true); };
+        img.onerror = () => { clearTimeout(t); res(false); };
+        img.src = TILE_URL(0, 0, 0);
+      });
+    }
+    function size() { if (!world) return; const r = stage.getBoundingClientRect(); world.width(Math.round(r.width)).height(Math.round(r.height)); }
 
-    function project(lat, lon) {
-      const x0 = Math.cos(lat) * Math.sin(lon), y0 = Math.sin(lat), z0 = Math.cos(lat) * Math.cos(lon);
-      const cosA = Math.cos(angleY), sinA = Math.sin(angleY);
-      const x1 = x0 * cosA + z0 * sinA, z1 = -x0 * sinA + z0 * cosA, y1 = y0;
-      const y2 = y1 * cosT - z1 * sinT, z2 = y1 * sinT + z1 * cosT;
-      return { x: x1, y: y2, z: z2 };
+    function pinElement() {
+      const el = document.createElement('div');
+      el.className = 'globe-pin';
+      el.innerHTML = '<span>Ath-Thoifah Al Manshuroh</span><svg viewBox="-4 0 36 36"><path fill="currentColor" d="M14,0 C21.732,0 28,5.641 28,12.6 C28,23.963 14,36 14,36 C14,36 0,24.064 0,12.6 C0,5.641 6.268,0 14,0 Z"/><circle fill="#07130f" cx="14" cy="13" r="6"/></svg>';
+      el.onclick = () => flyToSchool();
+      return el;
     }
 
-    const LOGICAL = 560;
-    function draw() {
-      const w = LOGICAL, h = LOGICAL, R = Math.min(w, h) * 0.42, cx = w / 2, cy = h / 2;
-      ctx.clearRect(0, 0, w, h);
+    function flyToSchool() {
+      if (!world || flying) return;
+      flying = true;
+      card.classList.remove('show');
+      world.controls().autoRotate = false;
+      world.pointOfView({ lat: SCHOOL.lat, lng: SCHOOL.lng, altitude: 1.6 }, 1800);
+      setTimeout(() => world.pointOfView({ lat: SCHOOL.lat, lng: SCHOOL.lng, altitude: 0.0025 }, 3200), 1900);
+      setTimeout(() => { card.classList.add('show'); flying = false; }, 5200);
+    }
+    function resetView() {
+      if (!world) return;
+      card.classList.remove('show');
+      world.pointOfView({ lat: 5, lng: 105, altitude: 2.4 }, 2200);
+      setTimeout(() => { world.controls().autoRotate = true; }, 2300);
+    }
 
-      // внешний диск
-      ctx.beginPath();
-      ctx.arc(cx, cy, R, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(212,175,90,.55)';
-      ctx.lineWidth = 1.4;
-      ctx.stroke();
-      ctx.fillStyle = 'rgba(212,175,90,.04)';
-      ctx.fill();
+    async function start() {
+      if (started) return;
+      started = true;
+      if (!webglOk()) { loading.textContent = 'Browser ini tidak mendukung peta 3D — gunakan tautan Google Maps di bawah.'; return; }
+      try { await loadScript('assets/js/globe.gl.min.js'); }
+      catch (e) { loading.textContent = 'Bola dunia gagal dimuat.'; return; }
 
-      const STEP = 3 * Math.PI / 180;
+      world = new Globe(stage, { animateIn: true })
+        .backgroundColor('rgba(0,0,0,0)')
+        .globeImageUrl('assets/img/globe/earth-blue-marble.jpg')
+        .bumpImageUrl('assets/img/globe/earth-topology.png')
+        .showAtmosphere(true)
+        .atmosphereColor('#e9d39a')
+        .atmosphereAltitude(0.18)
+        .htmlElementsData([SCHOOL])
+        .htmlElement(pinElement)
+        .htmlElementVisibilityModifier((el, visible) => { el.style.opacity = visible ? 1 : 0; })
+        .onGlobeReady(() => loading.classList.add('hide'));
 
-      function strokeGraticule(points) {
-        let open = false;
-        for (const p of points) {
-          const front = p.z > -0.02;
-          const alpha = Math.max(0, Math.min(1, (p.z + 0.15) / 0.5)) * 0.5;
-          if (front) {
-            if (!open) { ctx.beginPath(); ctx.moveTo(cx + p.x * R, cy - p.y * R); open = true; }
-            else ctx.lineTo(cx + p.x * R, cy - p.y * R);
-            ctx.strokeStyle = `rgba(212,175,90,${alpha.toFixed(3)})`;
-          } else if (open) { ctx.stroke(); open = false; }
-        }
-        if (open) ctx.stroke();
+      const controls = world.controls();
+      controls.autoRotate = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+      controls.autoRotateSpeed = 0.45;
+      controls.minDistance = 100.2; // позволяет «нырнуть» почти к земле
+      world.pointOfView({ lat: 5, lng: 60, altitude: 2.4 });
+      size();
+
+      // Плитки подключаем, только если сервер спутниковых снимков доступен — иначе остаётся текстура NASA.
+      if (await tilesReachable()) {
+        world.globeTileEngineUrl(TILE_URL);
+        credit.textContent = 'Citra satelit: Esri, Maxar, Earthstar Geographics · NASA Blue Marble';
       }
-
-      // меридианы (долготы)
-      for (let lon = 0; lon < Math.PI * 2; lon += 30 * Math.PI / 180) {
-        const pts = [];
-        for (let lat = -Math.PI / 2; lat <= Math.PI / 2 + 1e-6; lat += STEP) pts.push(project(lat, lon));
-        strokeGraticule(pts);
-      }
-      // параллели (широты)
-      for (let lat = -60 * Math.PI / 180; lat <= 60 * Math.PI / 180 + 1e-6; lat += 20 * Math.PI / 180) {
-        const pts = [];
-        for (let lon = 0; lon <= Math.PI * 2 + 1e-6; lon += STEP) pts.push(project(lat, lon));
-        strokeGraticule(pts);
-      }
-
-      // маркер — Lubuk Pakam
-      const m = project(TARGET_LAT, TARGET_LON);
-      if (m.z > 0.05) {
-        const mx = cx + m.x * R, my = cy - m.y * R;
-        const a = Math.min(1, (m.z - 0.05) / 0.3);
-        const pulse = 5 + Math.sin(performance.now() / 260) * 2.2;
-        ctx.beginPath();
-        ctx.arc(mx, my, pulse + 5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(212,175,90,${(0.16 * a).toFixed(3)})`;
-        ctx.fill();
-        ctx.beginPath();
-        ctx.arc(mx, my, 4.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(233,211,154,${a.toFixed(3)})`;
-        ctx.fill();
-        ctx.beginPath();
-        ctx.arc(mx, my, 4.5, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(7,19,15,${a.toFixed(3)})`;
-        ctx.lineWidth = 1.2;
-        ctx.stroke();
-      }
-      found.classList.toggle('show', m.z > 0.75);
     }
 
-    function nearestHome(angle) {
-      const k = Math.round((angle - homeAngleY) / (Math.PI * 2));
-      return homeAngleY + k * Math.PI * 2;
-    }
+    new ResizeObserver(size).observe(stage);
+    document.getElementById('globeFly').onclick = async () => { await start(); setTimeout(flyToSchool, world ? 300 : 0); };
+    document.getElementById('globeReset').onclick = async () => { await start(); resetView(); };
+    document.getElementById('globeCardClose').onclick = () => card.classList.remove('show');
 
-    function frame() {
-      if (dragging) {
-        // угол уже обновлён в pointermove
-      } else if (settling) {
-        velocity *= 0.94;
-        angleY += velocity;
-        const t = nearestHome(angleY);
-        const diff = t - angleY;
-        if (Math.abs(velocity) < 0.0009) {
-          angleY += diff * 0.08;
-          if (Math.abs(diff) < 0.001) { angleY = t; settling = false; velocity = 0; }
-        }
-      } else {
-        angleY += velocity;
-      }
-      draw();
-      requestAnimationFrame(frame);
-    }
-
-    function onDown(x) {
-      dragging = true; settling = false; hasInteracted = true;
-      lastX = x;
-      hint.classList.add('hide');
-      canvas.style.cursor = 'grabbing';
-    }
-    function onMove(x) {
-      if (!dragging) return;
-      const dx = x - lastX; lastX = x;
-      const delta = dx * 0.008;
-      angleY += delta;
-      velocity = delta;
-    }
-    function onUp() {
-      if (!dragging) return;
-      dragging = false;
-      settling = true;
-      canvas.style.cursor = 'grab';
-    }
-
-    canvas.addEventListener('pointerdown', (e) => { canvas.setPointerCapture(e.pointerId); onDown(e.clientX); });
-    canvas.addEventListener('pointermove', (e) => onMove(e.clientX));
-    canvas.addEventListener('pointerup', onUp);
-    canvas.addEventListener('pointercancel', onUp);
-
-    // ретина: буфер больше, чем видимый размер (задан в CSS), координаты рисования остаются 0..560
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
-    canvas.width = 560 * dpr;
-    canvas.height = 560 * dpr;
-    ctx.scale(dpr, dpr);
-
-    requestAnimationFrame(frame);
+    new IntersectionObserver((entries, obs) => {
+      if (entries.some(e => e.isIntersecting)) { obs.disconnect(); start(); }
+    }, { rootMargin: '400px' }).observe(stage);
   })();
 </script>
 </body>
